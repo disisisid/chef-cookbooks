@@ -1,0 +1,22 @@
+---
+driver:
+  name: docker
+
+provisioner:
+  name: chef_zero
+  always_update_cookbooks: true
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: centos-7.5
+
+suites:
+  - name: default
+    run_list:
+      - recipe[tomcat::default]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
