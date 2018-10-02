@@ -6,7 +6,7 @@
 # found at http://inspec.io/docs/reference/resources/
 
 describe command('django-admin --version') do
-	its(:stdout) { should match /1.6.1/ }
+	its(:stdout) { should match /1.8.7/ }
 end
 
 
